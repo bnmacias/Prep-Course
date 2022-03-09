@@ -174,20 +174,25 @@ function esVerdadero(valor){
   //Escribe una función que reciba un valor booleano y retorne “Soy verdadero” 
   //si su valor es true y “Soy falso” si su valor es false.
   //Escribe tu código aquí
-
+  if(valor < 1) return "Soy falso";
+  if(valor >= 1) return "Soy verdadero"; 
 }
 
 function tablaDelSeis(){
   //Escribe una función que muestre la tabla de multiplicar del 6 (del 0 al 60).
   //La función devuelve un array con los resultados de la tabla de multiplicar del 6 en orden creciente.
   //Escribe tu código aquí   
-  
+  const tablaDelSeis = [0, 6, 12, 18, 24, 30, 36, 42, 48, 54, 60];
+  return tablaDelSeis;
 }
 
 function tieneTresDigitos(numero){
   //Leer un número entero y retornar true si tiene 3 dígitos. Caso contrario, retorna false.
   //Escribe tu código aquí
-  
+  if(numero > 99 && numero < 1000){
+    return true;
+  }
+  return false;
 }
 
 function doWhile(numero) {
