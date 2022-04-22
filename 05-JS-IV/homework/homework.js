@@ -37,9 +37,6 @@ function multiplicarNumeroDesconocidoPorCinco(objetoMisterioso) {
   // "objetoMisterioso" tiene una propiedad llamada "numeroMisterioso"
   // Multiplica el numeroMisterioso por 5 y devuelve el producto
   // Tu código:
-  var objMisterioso = {
-    numeroMisterioso: 4,
-  }
   var result = objetoMisterioso.numeroMisterioso * 5;
   return result;
 }
@@ -57,10 +54,10 @@ function nuevoUsuario(nombre, email, password) {
   // Crea un nuevo objeto con las propiedades coincidiendo con los argumentos que se pasan a la función
   // Devuelve el objeto
   // Tu código:
-  nuevoObjeto = {
+  var nuevoObjeto = {
     nombre: nombre,
     email: email,
-    password: password,
+    password: password
   }
   return nuevoObjeto;
 }
@@ -71,11 +68,10 @@ function tieneEmail(usuario) {
   // Tu código:
   if(usuario["email"]){
     return true;
-  }else{
+  } else {
     return false;
   }
 }
-
 
 function tienePropiedad(objeto, propiedad) {
   // Devuelve "true" si el objeto (parámetro "objeto") tiene una propiedad (key) cuyo nombre es igual al valor del argumento "propiedad"
@@ -84,7 +80,7 @@ function tienePropiedad(objeto, propiedad) {
   // Tu código: 
     if(objeto[propiedad]){
     return true;
-  }else{
+  } else {
     return false;
   }
 }
@@ -96,7 +92,7 @@ function verificarPassword(usuario, password) {
   // // Tu código:
   if(usuario['password'] === password){
     return true;
-  }else{
+  } else {
     return false;
   }
 }
@@ -105,7 +101,7 @@ function actualizarPassword(usuario, nuevaPassword) {
   // Reemplaza la contraseña existente en el objeto "usuario" con el valor de "nuevagPassword"
   // Devuelve el objeto
   // Tu código:
-  usuario.password = nuevaPassword;
+  usuario["password"] = nuevaPassword;
   return usuario;
 }
 
@@ -114,7 +110,7 @@ function agregarAmigo(usuario, nuevoAmigo) {
   // Agrega "nuevoAmigo" al final de ese array
   // Devuelve el objeto "usuario"
   // // Tu código:
-  usuario.amigos.push(nuevoAmigo);
+  usuario["amigos"].push(nuevoAmigo);
   return usuario;
 }
 
@@ -139,7 +135,7 @@ function sumarLikesDeUsuario(usuario) {
   // Tu código:
   var suma = 0;
   for(var i = 0; i < usuario.posts.length; i++){
-    suma = suma + usuario.posts[i]['likes'];
+    suma = suma + usuario["posts"][i]['likes'];
   }
    return suma;
 }
@@ -155,10 +151,11 @@ function agregarMetodoCalculoDescuento(producto) {
   // producto.calcularPrecioDescuento() -> 20 - (20 * 0.2)
   // Tu código:
   producto.calcularPrecioDescuento = function (){
-   return this.producto['precio'] - (producto.precio * porcentajeDeDescuento);
+   return this.precio - (this.precio * this.porcentajeDeDescuento);
    }
   return producto;
 }
+
 
 // No modificar nada debajo de esta línea
 // --------------------------------
@@ -171,7 +168,6 @@ module.exports = {
   eliminarPropiedad,
   nuevoUsuario,
   tieneEmail,
-
   tienePropiedad,
   verificarPassword,
   actualizarPassword,
@@ -179,4 +175,4 @@ module.exports = {
   pasarUsuarioAPremium,
   sumarLikesDeUsuario,
   agregarMetodoCalculoDescuento
-};
+}
